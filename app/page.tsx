@@ -1,29 +1,35 @@
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-8 bg-[#F9F9F9] text-[#1A1A1A]">
-      <div className="max-w-2xl w-full border-2 border-[#1A1A1A] p-12 bg-white space-y-8 shadow-[8px_8px_0px_0px_rgba(26,26,26,1)]">
-        <header className="space-y-2">
-          <h1 className="text-5xl font-serif italic tracking-tighter">Isle AI</h1>
-          <p className="text-sm font-mono uppercase tracking-widest text-zinc-500">
-            Status: Day 1/45 — Building the Creative Studio
+    <main className="min-h-screen flex flex-col items-center justify-center p-6">
+      <div className="max-w-3xl w-full space-y-12">
+        <header className="border-b-2 border-isle-ink pb-4">
+          <h1 className="text-5xl italic">Isle AI</h1>
+          <p className="text-sm uppercase tracking-widest mt-2">
+            Estudio Editorial de Inteligencia Artificial [cite: 87, 88]
           </p>
         </header>
 
-        <section className="space-y-4">
-          <p className="text-xl leading-relaxed font-serif">
-            AI doesn't have to be boring. <br /> 
-            We are crafting an aesthetic, private, and modular workspace for your digital brains.
+        <section className="isle-card shadow-[10px_10px_0px_0px_rgba(26,26,26,1)]">
+          <h2 className="text-3xl mb-6">Bienvenido al Camaleón</h2>
+          <p className="mb-8 leading-relaxed">
+            Tu espacio de trabajo unificado para gestionar múltiples cerebros digitales 
+            bajo una estética analógica. [cite: 21, 87]
           </p>
-          <div className="bg-[#1A1A1A] text-white p-6 font-mono text-sm border-l-4 border-[#E63946]">
-            <p className="mb-2 tracking-tight">&gt; Unlimited API compatible</p>
-            <p className="mb-2 tracking-tight">&gt; Total Customization</p>
-            <p className="tracking-tight">&gt; Infinite Canvas</p>
+          
+          <div className="flex flex-col gap-4">
+            <input 
+              type="text" 
+              placeholder="Introduce tu API Key (Local Only)..." 
+              className="p-4 border-2 border-isle-ink bg-transparent font-mono focus:outline-none"
+            />
+            <button className="isle-button">
+              INICIALIZAR INTERFAZ
+            </button>
           </div>
         </section>
 
-        <footer className="pt-8 border-t border-zinc-200 flex justify-between items-center">
-          <p className="font-mono text-xs text-zinc-400">COMING SOON TO YOUR BROWSER</p>
-          <div className="h-2 w-2 bg-[#E63946] animate-pulse"></div>
+        <footer className="text-[10px] font-mono opacity-50 text-center">
+          VERSIÓN 1.0 — FEBRERO 2026 [cite: 49]
         </footer>
       </div>
     </main>
