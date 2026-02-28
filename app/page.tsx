@@ -1,80 +1,65 @@
-import { PenTool, Box, Zap, Shield } from "lucide-react"; // Usaremos iconos minimalistas
+import React from 'react';
+
+// Definimos la interfaz para evitar errores de TypeScript en el build de Vercel
+interface FeatureProps {
+  title: string;
+  desc: string;
+}
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-isle-paper text-isle-ink selection:bg-isle-ink selection:text-isle-paper">
       
-      {/* --- Navegación Editorial --- */}
+      {/* Navegación Estilo Editorial */}
       <nav className="flex justify-between items-center p-8 border-b-2 border-isle-ink">
         <span className="font-display text-2xl italic font-bold">Isle AI</span>
-        <div className="space-x-8 font-mono text-xs uppercase tracking-widest">
-          <a href="#filosofia" className="hover:line-through">Filosofía</a>
-          <a href="#features" className="hover:line-through">Funciones</a>
-          <button className="border-2 border-isle-ink px-4 py-1 hover:bg-isle-ink hover:text-isle-paper transition-colors">
-            Acceso Pro
-          </button>
+        <div className="space-x-8 font-mono text-xs uppercase tracking-widest hidden md:block">
+          <span className="opacity-50">BYOK Model</span>
+          <span className="opacity-50">Personalización Extrema</span>
         </div>
       </nav>
 
-      {/* --- Hero Section: El "Elevator Pitch" --- */}
+      {/* Hero Section - El Corazón del Proyecto [cite: 5, 52] */}
       <header className="py-24 px-8 max-w-6xl mx-auto text-center border-b-2 border-isle-ink">
-        <h1 className="font-display text-7xl md:text-9xl mb-6 italic leading-tight">
-          El contenedor, <br /> no el contenido.
+        <h1 className="font-display text-6xl md:text-8xl mb-6 italic leading-tight">
+          El contenedor, <br /> no el contenido. [cite: 22]
         </h1>
         <p className="font-mono text-lg max-w-2xl mx-auto mb-10 opacity-80">
-          Un espacio de trabajo unificado y estético para gestionar múltiples cerebros digitales[cite: 21]. 
-          Trae tus propias llaves (BYOK) y personaliza tu entorno hasta el último pixel[cite: 20, 51].
+          Un espacio de trabajo unificado y estético para gestionar múltiples cerebros digitales. [cite: 21]
         </p>
-        <button className="isle-button text-xl">
-          EMPEZAR A CREAR
+        <button className="px-8 py-4 border-2 border-isle-ink bg-isle-ink text-white font-bold hover:bg-white hover:text-isle-ink transition-colors duration-200 text-xl">
+          EMPEZAR PROYECTO
         </button>
       </header>
 
-      {/* --- Grid de Propuesta de Valor --- */}
-      <section id="features" className="grid md:grid-cols-3">
+      {/* Grid de Propuesta de Valor [cite: 58, 61] */}
+      <section className="grid md:grid-cols-2 lg:grid-cols-3">
         <FeatureCard 
-          icon={<PenTool size={32} />} 
-          title="Estética Editorial" 
-          desc="Transformamos el chat aburrido en un estudio creativo inspirado en el papel premium[cite: 53, 87]." 
+          title="Libertad Estética" 
+          desc="Desde minimalismo Zen hasta modo Hacker. Tú controlas la tinta y el papel." [cite: 59]
         />
         <FeatureCard 
-          icon={<Box size={32} />} 
-          title="Hub Agnóstico" 
-          desc="Conecta GPT-4, Claude 3.5 y Gemini en una sola ventana sin pagar múltiples suscripciones[cite: 59, 63]." 
-        />
-        <FeatureCard 
-          icon={<Shield size={32} />} 
           title="Privacidad Local" 
-          desc="Tus API Keys y conversaciones se encriptan y guardan solo en tu dispositivo[cite: 42, 60]." 
+          desc="Tus API Keys se encriptan y guardan solo en tu dispositivo. Nadie más lee tus chats." [cite: 60, 82]
+        />
+        <FeatureCard 
+          title="Multicasting" 
+          desc="Envía una pregunta a varios modelos a la vez y compara respuestas en paralelo." [cite: 36, 70]
         />
       </section>
 
-      {/* --- Sección de "Vibes" (Personalización) --- */}
-      <section className="p-16 bg-isle-ink text-isle-paper text-center">
-        <h2 className="font-display text-5xl mb-8 italic">Cambia el "Vibe" al instante.</h2>
-        <div className="flex flex-wrap justify-center gap-4 font-mono text-xs">
-          <span className="border border-isle-paper px-4 py-2 opacity-50">MODO ZEN</span>
-          <span className="border border-isle-paper px-4 py-2 font-bold bg-isle-paper text-isle-ink">PAPER & INK</span>
-          <span className="border border-isle-paper px-4 py-2 opacity-50">MODO HACKER</span>
-          <span className="border border-isle-paper px-4 py-2 opacity-50">GLASSMORPHISM</span>
-        </div>
-      </section>
-
-      {/* --- Footer --- */}
-      <footer className="p-8 border-t-2 border-isle-ink flex justify-between font-mono text-[10px] uppercase opacity-60">
-        <span>Isle AI © 2026</span>
-        <span>Hecho para pensadores visuales [cite: 64]</span>
+      <footer className="p-8 border-t-2 border-isle-ink text-center font-mono text-[10px] uppercase opacity-60">
+        Isle AI — Fase 1: Cimientos 
       </footer>
     </div>
   );
 }
 
-function FeatureCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
+function FeatureCard({ title, desc }: FeatureProps) {
   return (
     <div className="p-12 border-r-2 border-b-2 last:border-r-0 border-isle-ink flex flex-col items-center text-center">
-      <div className="mb-6">{icon}</div>
       <h3 className="text-2xl mb-4 italic font-bold">{title}</h3>
-      <p className="font-mono text-sm leading-relaxed">{desc}</p>
+      <p className="font-mono text-sm leading-relaxed opacity-75">{desc}</p>
     </div>
   );
 }
