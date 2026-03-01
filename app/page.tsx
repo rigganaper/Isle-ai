@@ -1,65 +1,52 @@
 import React from 'react';
 
-// Definimos la interfaz para evitar errores de TypeScript en el build de Vercel
-interface FeatureProps {
-  title: string;
-  desc: string;
-}
-
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-isle-paper text-isle-ink selection:bg-isle-ink selection:text-isle-paper">
+    <div className="min-h-screen bg-[#F9F9F9] text-[#1A1A1A] selection:bg-[#1A1A1A] selection:text-[#F9F9F9] font-mono">
       
-      {/* Navegación Estilo Editorial */}
-      <nav className="flex justify-between items-center p-8 border-b-2 border-isle-ink">
-        <span className="font-display text-2xl italic font-bold">Isle AI</span>
-        <div className="space-x-8 font-mono text-xs uppercase tracking-widest hidden md:block">
-          <span className="opacity-50">BYOK Model</span>
-          <span className="opacity-50">Personalización Extrema</span>
+      {/* Navegación */}
+      <nav className="flex justify-between items-center p-6 border-b-2 border-[#1A1A1A]">
+        <span className="font-serif text-2xl italic font-bold">Isle AI</span>
+        <div className="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.2em]">
+          <span className="opacity-50">Concept: BYOK</span>
+          <span className="opacity-50">Design: Paper & Ink</span>
         </div>
       </nav>
 
-      {/* Hero Section - El Corazón del Proyecto [cite: 5, 52] */}
-      <header className="py-24 px-8 max-w-6xl mx-auto text-center border-b-2 border-isle-ink">
-        <h1 className="font-display text-6xl md:text-8xl mb-6 italic leading-tight">
-          El contenedor, <br /> no el contenido. [cite: 22]
+      {/* Hero Section */}
+      <header className="py-20 px-6 max-w-5xl mx-auto text-center border-b-2 border-[#1A1A1A]">
+        <h1 className="font-serif text-6xl md:text-8xl mb-8 italic leading-[1.1]">
+          El contenedor, <br /> no el contenido.
         </h1>
-        <p className="font-mono text-lg max-w-2xl mx-auto mb-10 opacity-80">
-          Un espacio de trabajo unificado y estético para gestionar múltiples cerebros digitales. [cite: 21]
+        <p className="text-sm md:text-base max-w-xl mx-auto mb-12 leading-relaxed opacity-80">
+          Un espacio de trabajo unificado y estético para gestionar múltiples cerebros digitales. 
+          Trae tus propias llaves y personaliza tu entorno hasta el último pixel.
         </p>
-        <button className="px-8 py-4 border-2 border-isle-ink bg-isle-ink text-white font-bold hover:bg-white hover:text-isle-ink transition-colors duration-200 text-xl">
-          EMPEZAR PROYECTO
+        <button className="px-10 py-4 border-2 border-[#1A1A1A] bg-[#1A1A1A] text-white font-bold hover:bg-white hover:text-[#1A1A1A] transition-all duration-300 uppercase text-xs tracking-widest">
+          Unirse a la lista de espera
         </button>
       </header>
 
-      {/* Grid de Propuesta de Valor [cite: 58, 61] */}
-      <section className="grid md:grid-cols-2 lg:grid-cols-3">
-        <FeatureCard 
-          title="Libertad Estética" 
-          desc="Desde minimalismo Zen hasta modo Hacker. Tú controlas la tinta y el papel." [cite: 59]
-        />
-        <FeatureCard 
-          title="Privacidad Local" 
-          desc="Tus API Keys se encriptan y guardan solo en tu dispositivo. Nadie más lee tus chats." [cite: 60, 82]
-        />
-        <FeatureCard 
-          title="Multicasting" 
-          desc="Envía una pregunta a varios modelos a la vez y compara respuestas en paralelo." [cite: 36, 70]
-        />
+      {/* Grid de Propuesta de Valor */}
+      <section className="grid md:grid-cols-3 border-b-2 border-[#1A1A1A]">
+        <div className="p-10 border-b-2 md:border-b-0 md:border-r-2 border-[#1A1A1A] group hover:bg-white transition-colors">
+          <h3 className="font-serif text-2xl mb-4 italic font-bold">Estética Editorial</h3>
+          <p className="text-xs leading-loose opacity-70">Interfaces que evocan la tangibilidad del papel premium y la precisión de la tinta tipográfica.</p>
+        </div>
+        <div className="p-10 border-b-2 md:border-b-0 md:border-r-2 border-[#1A1A1A] group hover:bg-white transition-colors">
+          <h3 className="font-serif text-2xl mb-4 italic font-bold">Privacidad Total</h3>
+          <p className="text-xs leading-loose opacity-70">Tus llaves de API nunca tocan nuestro servidor. Todo el procesamiento y almacenamiento es local-first.</p>
+        </div>
+        <div className="p-10 group hover:bg-white transition-colors">
+          <h3 className="font-serif text-2xl mb-4 italic font-bold">Multi-Model Hub</h3>
+          <p className="text-xs leading-loose opacity-70">Conecta GPT-4, Claude y Gemini en un solo lienzo infinito. Compara, mezcla y crea sin fricciones.</p>
+        </div>
       </section>
 
-      <footer className="p-8 border-t-2 border-isle-ink text-center font-mono text-[10px] uppercase opacity-60">
-        Isle AI — Fase 1: Cimientos 
+      {/* Footer */}
+      <footer className="p-6 text-center text-[9px] uppercase tracking-[0.3em] opacity-40">
+        Isle AI &copy; 2026 — Built for Deep Thought
       </footer>
-    </div>
-  );
-}
-
-function FeatureCard({ title, desc }: FeatureProps) {
-  return (
-    <div className="p-12 border-r-2 border-b-2 last:border-r-0 border-isle-ink flex flex-col items-center text-center">
-      <h3 className="text-2xl mb-4 italic font-bold">{title}</h3>
-      <p className="font-mono text-sm leading-relaxed opacity-75">{desc}</p>
     </div>
   );
 }
